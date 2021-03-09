@@ -1,0 +1,11 @@
+curl -vvv http://localhost:8080/Carsproject/api/car/addCar
+
+
+curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/CarsProject/api/car/addCar -d '{"id":233,"name":"Xylo","price":45000,"cpdate":"2017-12-27"}'
+
+curl -vvv -i -X PUT -H "Content-Type:application/json" http://localhost:8080/CarsProject/api/car/updateCar -d '{"id":233,"name":"Xylo10","price":45000,"cpdate":"2017-12-27"}'
+
+
+
+
+curl -i -X POST -H "Content-Type:application/json" http://localhost:8080/MLP196/api/customer/cuslogin -d '{10, "Riya", "rita@hexaware", "rita@dine", "rita1234", "7896541230", 100.00f}'

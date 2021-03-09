@@ -1,0 +1,29 @@
+GET ONLY RESPONSE
+
+curl url
+---------------------------------------------
+GET RESPONSE and HEADERS
+
+curl -i url
+---------------------------------------------
+GET ONLY HEADERS
+
+curl --head url
+culr -l url
+---------------------------------------------
+GET DETAILS OF CLIENT SERVER INTERACTION
+
+-v verbose
+curl -v url
+---------------------------------------------
+GET EVEN MORE DETAILS AND LOG ALL INTERACTION OF FILE
+
+--trace
+curl --trace FILE URL
+
+curl --trace logtrace.txt 
+------------------------------------------------------------
+SEND HEADERS IN REQUEST
+
+-H
+curl -v -H "Accept:application/json"
