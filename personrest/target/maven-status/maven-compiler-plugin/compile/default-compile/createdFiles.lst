@@ -1,0 +1,9 @@
+com\org\persistence\PersonMapper.class
+com\org\util\FTPApplication.class
+com\org\factory\PersonFactory.class
+com\org\model\Person.class
+com\org\util\PersonRest.class
+com\org\persistence\DbConnection.class
+com\org\util\CliMain.class
+com\org\persistence\PersonDAO.class
+com\org\util\CORSFilter.class

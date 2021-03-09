@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="container1">
+      <mat-card class="card-width">
+          <div>
+              <h1 style="text-align: center;">Customer Signup</h1>
+              <form (ngSubmit)="signupUser()" [formGroup]="cussignupForm" novalidate>
+                  <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name" placeholder="Name" required/>
+                        <mat-icon matSuffix>remove_red_eye</mat-icon>
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <mat-error *ngIf ="name.invalid && (name.dirty ||name.touched)">Enter a valid Name</mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>E-Mail</mat-label>
+                          <input matInput formControlName="email" placeholder="Email" required/>
+                          <mat-icon matSuffix>remove_red_eye</mat-icon>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                          <mat-error *ngIf ="email.invalid && (email.dirty ||email.touched)">Enter a valid Email</mat-error>
+                        </mat-form-field>
+                      </p>
+                  <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" placeholder="Username" required/>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <mat-error *ngIf="username.invalid && (username.dirty ||username.touched)">Enter the valid user name</mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Password</mat-label>
+                          <input matInput formControlName="password" placeholder="Password" required/>
+                          <mat-icon matSuffix>remove_red_eye</mat-icon>
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                          <mat-error *ngIf ="password.invalid && (password.dirty ||password.touched)">Enter a valid password</mat-error>
+                        </mat-form-field>
+                      </p>
+                      <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput formControlName="phone" placeholder="phone" required/>
+                            <mat-icon matSuffix>remove_red_eye</mat-icon>
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                            <mat-error *ngIf ="phone.invalid && (phone.dirty ||phone.touched)">Enter a valid Phone Number</mat-error>
+                          </mat-form-field>
+                        </p>
+                      <p>
+                          <button mat-stroked-button [disabled]="cussignupForm.invalid" color="primary"><mat-icon>exit_to_app</mat-icon>&nbsp;Signup</button>
+                      </p>
+                      <div style="margin-left:43%" *ngIf="isLoading">
+                          <mat-spinner [diameter]="40"></mat-spinner>
+                      </div>
+              </form>
+            </div>
+      </mat-card>
+  </div>
+</div>

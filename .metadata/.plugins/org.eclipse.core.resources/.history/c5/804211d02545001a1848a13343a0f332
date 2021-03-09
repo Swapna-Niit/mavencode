@@ -1,0 +1,122 @@
+package com.hexaware.factory;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+
+import com.hexaware.model.Car;
+import com.hexaware.factory.CarFactory;
+import com.hexaware.factory.CarDAO;
+
+import org.junit.Test;
+
+import mockit.Expectations;
+import mockit.Mock;
+import mockit.MockUp;
+import mockit.Mocked;
+
+/**
+ * MenuFactoryTest.
+ */
+public class CarFactoryTest {
+  /**
+   * testGetAllMenu.
+   * @param dao .
+   */
+  @Test
+  public final void testGetAllCar(@Mocked final CarDAO dao) {
+    final Car m1 = new Car(1,"Audi",500000);
+    final ArrayList<Car> mn = new ArrayList<Car>();
+    new Expectations() {
+      {
+        mn.add(m1);
+        dao.show();
+        result = mn;
+      }
+    };
+    new MockUp<CarFactory>() {
+      @Mock
+      MenuDAO dao() {
+        return dao;
+      }
+    };
+    Menu[] mn1 = MenuFactory.showMenu();
+    assertEquals(m1, mn1[0]);
+
+  }
+/**
+   * testGetAllMenu.
+   * @param dao .
+   */
+  @Test
+  public final void testSelectAllMenu(@Mocked final MenuDAO dao) {
+    final Menu m2 = new Menu(101, "HYDERABADI CHICKEN", 150, "4 PIECE AND RICE", "NON-VEG", "BIRYANI", 500);
+    final ArrayList<Menu> mm = new ArrayList<Menu>();
+    new Expectations() {
+      {
+        mm.add(m2);
+        dao.selectMenu(101);
+        result = mm;
+      }
+    };
+    new MockUp<MenuFactory>() {
+      @Mock
+      MenuDAO dao() {
+        return dao;
+      }
+    };
+    Menu mn2 = MenuFactory.selectMenu(101);
+    assertEquals(m2, mn2);
+
+  }
+  /**
+   * testGetAllMenu.
+   * @param dao .
+   */
+  @Test
+  public final void testSelectVendorId(@Mocked final MenuDAO dao) {
+    final Menu m3 = new Menu(101, "HYDERABADI CHICKEN", 150, "4 PIECE AND RICE", "NON-VEG", "BIRYANI", 500);
+    final ArrayList<Menu> ml = new ArrayList<Menu>();
+    new Expectations() {
+      {
+        ml.add(m3);
+        dao.getVenID(500);
+        result = ml;
+      }
+    };
+    new MockUp<MenuFactory>() {
+      @Mock
+      MenuDAO dao() {
+        return dao;
+      }
+    };
+    Menu mn3 = MenuFactory.getVenID(500);
+    assertEquals(m3, mn3);
+
+  }
+  /**
+   * tests that adding menu is handled correctly.
+   * @param dao mocking the dao class
+   */
+  @Test
+  public final void testInsertOneMenu(@Mocked final MenuDAO dao) {
+
+    final int expectedS = 1;
+    new Expectations() {
+        {
+          System.out.println("Mocked GetNewMenu");
+          dao.addMenu("Paneer Butter Masala", 200, "Paneer With Chopped onions", "VEG", "SPECIALS", 500);
+          result = expectedS;
+        }
+        };
+    new MockUp<MenuFactory>() {
+        @Mock
+        MenuDAO dao() {
+        System.out.println("Mocked Customer DAO");
+        return dao;
+        }
+        };
+    int actualS = MenuFactory.addMenu("Paneer Butter Masala", 200, "Paneer With Chopped onions", "VEG", "SPECIALS", 500);
+    assertEquals(expectedS, actualS);
+  }
+}

@@ -1,0 +1,32 @@
+<!-- <h1>Canteen Management System</h1> -->
+<!-- <ng-container *ngFor="let m of messages">  
+  <div class="message" [ngClass]="{ 'from': m.from === 'bot', 'to':   m.from === 'user'}">
+    User Says : {{ m.msg }}
+  </div>
+</ng-container>
+<label for="nameField">Your Message</label>
+   <input [(ngModel)]="strMsg" (keyup.enter)="sendMessage()" type="text">
+   <br>
+<button (click)="sendMessage()">Send</button> -->
+
+<div class="container">
+    <div class="container1">
+        <mat-card class="card-width1">
+            <mat-card-content>
+                <ng-container *ngFor="let m of messages">  
+                    <mat-card class="message" [ngStyle]="{'background-color':m.from == 'bot' ? 'yellow' : 'aqua'}" 
+                    [ngClass]="{ 'from': m.from === 'bot', 'to':   m.from === 'user'}">
+                          {{ m.msg }}
+                    </mat-card>
+                  </ng-container>
+            </mat-card-content>
+            <mat-card-footer>
+                <mat-form-field class="example-full-width">
+                    <input matInput [(ngModel)]="strMsg" (keyup.enter)="sendMessage()" placeholder="Your Message">
+                </mat-form-field>
+                <button mat-button color="warn" (click)="sendMessage()">Send</button>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+  </div>
+  

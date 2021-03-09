@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="container1">
+      <mat-card class="card-width">
+          <div>
+              <h1 style="text-align: center;">Customer Signup</h1>
+              <form (ngSubmit)="menuAddUSer()" [formGroup]="menuaddForm" novalidate>
+                  <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>MENU ID</mat-label>
+                        <input type="text" matInput formControlName="mnuId" placeholder="Menu Id" required/>
+                        <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <mat-error *ngIf ="mnuId.invalid && (mnuId.dirty || mnuId.touched)">Enter a valid menu Id</mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>MENU NAME</mat-label>
+                          <input type="text" matInput formControlName="menuname" placeholder="Menu Name" required/>
+                          <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                          <mat-error *ngIf ="menuname.invalid && (menuname.dirty ||menuname.touched)">Enter valid menu name</mat-error>
+                        </mat-form-field>
+                      </p>
+                  <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>MENU PRICE</mat-label>
+                        <input type="text "matInput formControlName="menuprice" placeholder="Menu Price" required/>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <mat-error *ngIf="menuprice.invalid && (menuprice.dirty ||menuprice.touched)">Enter valid menu price</mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>MENU DETAILS</mat-label>
+                          <input type="text" matInput formControlName="menudetails" placeholder="Menu Details" required/>
+                          <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                          <!-- <mat-hint>Hint</mat-hint> -->
+                          <mat-error *ngIf ="menudetails.invalid && (menudetails.dirty ||menudetails.touched)">Enter valid menu details</mat-error>
+                        </mat-form-field>
+                      </p>
+                      <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>MENU CATEGORY</mat-label>
+                            <input type="text" matInput formControlName="menucat" placeholder="Menu Category" required/>
+                            <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                            <mat-error *ngIf ="menucat.invalid && (menucat.dirty ||menucat.touched)">Enter valid menu category</mat-error>
+                          </mat-form-field>
+                        </p>
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>MENU SPECILIZATION</mat-label>
+                            <input type="text" matInput formControlName="menuspcl" placeholder="Menu Specilization" required/>
+                            <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                            <mat-error *ngIf ="menuspcl.invalid && (menuspcl.dirty ||menuspcl.touched)">Enter valid menu specilization</mat-error>
+                          </mat-form-field>
+                        </p>
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>MENU VENDOR ID</mat-label>
+                            <input type="text" matInput formControlName="menuvenid" placeholder="Vendor Id" required/>
+                            <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                            <mat-error *ngIf ="menuvenid.invalid && (menuvenid.dirty ||menuvenid.touched)">Enter valid vendor id</mat-error>
+                          </mat-form-field>
+                        </p>
+                      <p>
+                          <button mat-stroked-button [disabled]="cussignupForm.invalid" color="primary"><mat-icon>exit_to_app</mat-icon>&nbsp;Signup</button>
+                      </p>
+                      <div style="margin-left:43%" *ngIf="isLoading">
+                          <mat-spinner [diameter]="40"></mat-spinner>
+                      </div>
+              </form>
+            </div>
+      </mat-card>
+  </div>
+</div>

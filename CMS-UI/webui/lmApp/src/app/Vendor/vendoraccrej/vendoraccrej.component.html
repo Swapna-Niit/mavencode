@@ -1,0 +1,51 @@
+<!-- <p>vendoraccrej works!</p> -->
+<div class="container">
+    <h1 style="text-align:center">Orders</h1>
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <ng-container matColumnDef="ordId">
+            <th mat-header-cell *matHeaderCellDef> Order Id</th>
+            <td mat-cell *matCellDef="let data"> {{data.ordId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ordQuantity">
+            <th mat-header-cell *matHeaderCellDef> Order Quantity</th>
+            <td mat-cell *matCellDef="let data"> {{data.ordQuantity}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ordPrice">
+            <th mat-header-cell *matHeaderCellDef> Order Price</th>
+            <td mat-cell *matCellDef="let data"> {{data.ordPrice}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ordTime">
+            <th mat-header-cell *matHeaderCellDef> Order Time</th>
+            <td mat-cell *matCellDef="let data"> {{data.ordTime | date:"dd/MM/yyyy"}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ordEstTime">
+            <th mat-header-cell *matHeaderCellDef> Order Estimated time</th>
+            <td mat-cell *matCellDef="let data"> {{data.ordEstTime}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ordStatus">
+            <th mat-header-cell *matHeaderCellDef> Order Status</th>
+            <td mat-cell *matCellDef="let data">{{data.ordStatus}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ordComments">
+            <th mat-header-cell *matHeaderCellDef> Order Comments</th>
+            <td mat-cell *matCellDef="let data">
+                    <mat-form-field appearance="outline">
+                            <mat-label>Comments</mat-label>
+                            <input type="text" class="input-width" matInput name="{{data.ordId}}" id="{{data.ordId}}" [(ngModel)]="data.ordComments"
+                                placeholder="Comments">
+                            <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
+                            <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="ordAccRej">
+            <th mat-header-cell *matHeaderCellDef> Order Accept/Reject</th>
+            <td mat-cell *matCellDef="let data">
+                <button mat-button color="warn" (click)="onClickAccept(data.ordId, data.ordComments)">Accept</button>
+                <button mat-button color="primary" (click)="onClickReject(data.ordId, data.ordComments)">Reject</button> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+    </table>
+</div>

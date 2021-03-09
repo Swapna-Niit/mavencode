@@ -1,0 +1,48 @@
+Step 1: Open a terminal and run the following command:
+
+node -v
+
+Step 2: To use the Angular CLI?—?you first need to install it via npm? package manager. ?Head over to your terminal and enter the following command:
+
+$ npm install -g @angular
+
+Step 3 :After installing Angular CLI 8, you can run many commands. Let’s start by checking the version of the installed CLI:
+
+$ ng version
+
+Step 4:A second command that you might need to run is the help command:
+
+$ ng help
+
+Step 5:You can use Angular CLI 8 to quickly generate your Angular 8 project by running the following command in your terminal:
+
+$ ng new frontend
+
+Step 6:As mentioned earlier, the CLI v7 will ask you about if Would you like to add Angular routing?, you can answer by y (Yes) or No which is the default option. Ii will also ask you about the stylesheet format, you want to use (such as CSS). Choose your options and hit Enter to continue.
+
+Step 7: Angular CLI 8?—?Serving your Project with a Development Server
+Angular CLI provides a complete tool-chain for developing front-end apps on your local machine. As such, you don’t need to install a local server to serve your project?—?you can simply, use the ng serve from your terminal to serve your project locally. First navigate inside your project's folder and run the following commands:
+
+$ cd frontend
+$ ng serve
+
+You can now navigate to the http://localhost:4200/ address to start playing with your front-end application. The page will automatically live-reload if you change any source file.
+
+You can also use different host address and port other than the default HTTP host and port by providing new options. For example:
+
+$ ng serve --host 0.0.0.0 --port 8080
+
+Step 8: Agular CLI 8—?Generating Components, Directives, Pipes, Services and Modules
+To bootstrap your productivity, Angular CLI provides a generate command modules etc. For example to generate a component run:and to quickly generate basic Angular constructs such as components, directives, pipes, services
+
+$ ng generate component account-list
+
+account-list is the name of the component. You can also use just g instead of generate The Angular CLI will automatically add reference to components, directives and pipes in the app.module.ts.
+
+Step 9: 
+ 
+
+If you want to add your component, directive or pipe to another module?—?other than the main application module i.e app.module.ts—for example to a feature module, you can simply prefix the name of the component with the module name and a slash?—?like a path.
+
+$ ng g component account-module/account-list
+

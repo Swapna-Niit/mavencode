@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.hexaware.testrest.CarRestTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.68 s <<< FAILURE! - in com.hexaware.testrest.CarRestTest
+testCarList(com.hexaware.testrest.CarRestTest)  Time elapsed: 2.68 s  <<< ERROR!
+java.lang.IllegalStateException: Cannot parse object because no supported Content-Type was not specified in response. Content-Type was 'text/html;charset=utf-8'.
+	at com.hexaware.testrest.CarRestTest.testCarList(CarRestTest.java:24)
+

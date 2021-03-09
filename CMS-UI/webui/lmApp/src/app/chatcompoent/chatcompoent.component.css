@@ -1,0 +1,25 @@
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card-width1 {
+  width: 300px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.card-width {
+  width: 300px;
+  margin-top: 50px;
+}
+
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.message {
+  margin-top: 10px;
+}

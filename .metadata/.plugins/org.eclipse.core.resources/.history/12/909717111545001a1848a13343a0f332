@@ -1,0 +1,16 @@
+package com.hexaware.util;
+
+@Path("/car")
+public class CarRest {
+  /**
+   * Returns Menu details.
+   * @return the menu details
+   */
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  public final Cars[] listMenu() {
+    final Cars[] cars = CarFactory.showMenu();
+    return cars;
+  }
+
+}
